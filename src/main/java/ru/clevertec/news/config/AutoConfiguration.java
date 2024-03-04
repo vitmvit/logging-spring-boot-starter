@@ -8,9 +8,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import ru.clevertec.news.aspect.ControllerAspect;
 
+/**
+ * Автоконфигурация для обработки исключений.
+ * Конфигурация может быть включена и выключена с помощью свойства "starter.logging.enabled" в файле application.yml.
+ */
 @Slf4j
 @Configuration
-@ConditionalOnProperty(prefix = "aop.logging", name = "enabled", havingValue = "true", matchIfMissing = true)
+@ConditionalOnProperty(prefix = "starter.logging", name = "enabled", havingValue = "true", matchIfMissing = true)
 public class AutoConfiguration {
 
     /**
